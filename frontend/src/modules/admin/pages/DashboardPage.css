@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Admin Dashboard - Modern SaaS Design System
+   Matches Reference UI & Fully Responsive Across All Themes
+   ========================================================================== */
+
+.dash-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  box-sizing: border-box;
+}
+
+/* Header */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dash-title-group h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.dash-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.dash-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dash-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.dash-primary-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Stat Cards Grid */
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dash-stat-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dash-stat-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dash-stat-label {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.dash-stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.dash-stat-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+
+
+/* Recent Submissions Card & Table */
+.dash-recent-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.dash-recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dash-recent-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.dash-view-all-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.15s ease;
+}
+
+.dash-view-all-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.dash-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dash-table th {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.dash-table th:first-child,
+.dash-table td:first-child {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.dash-table td {
+  padding: 0.65rem 1.15rem;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.dash-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dash-table tr:hover td {
+  background-color: var(--color-surface-hover);
+}
+
+/* User cell */
+.dash-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dash-avatar-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(29, 78, 216, 0.12);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-admin-theme="red-black"] .dash-avatar-circle {
+  background-color: rgba(142, 14, 27, 0.12);
+  color: #8e0e1b;
+}
+
+[data-admin-theme="black-crimson"] .dash-avatar-circle {
+  background-color: rgba(225, 29, 72, 0.18);
+}
+
+[data-admin-theme="peacock"] .dash-avatar-circle {
+  background-color: rgba(13, 148, 136, 0.18);
+  color: #0d9488;
+}
+
+.dash-user-name {
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.dash-user-mobile {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+/* Status Badges matching reference */
+.dash-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dash-badge-confirmed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.dash-badge-pending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.dash-badge-documents {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+[data-admin-theme="black-crimson"] .dash-badge-confirmed {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+[data-admin-theme="black-crimson"] .dash-badge-pending {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+[data-admin-theme="black-crimson"] .dash-badge-documents {
+  background-color: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+/* Responsive queries */
+@media (max-width: 992px) {
+  .dash-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dash-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dash-container {
+    padding: 1rem 0.75rem 2rem;
+  }
+  .dash-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dash-header-actions {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,375 @@
+/* ==========================================================================
+   Employee Information Form - Professional 4-Column Full-Page Layout
+   Clean 4-Column Grid, Meaningful Margins, Optimal Field Proportions
+   ========================================================================== */
+
+/* Outer full-width container */
+.emp-form-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 46px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-background, #f0fdfa);
+  padding: 14px 28px 28px 28px;
+  box-sizing: border-box;
+}
+
+/* Card - Clean full-width surface with meaningful margin */
+.emp-card {
+  width: 100%;
+  max-width: 1360px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid var(--color-border, #ccfbf1);
+  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 26px 20px 26px;
+  box-sizing: border-box;
+}
+
+/* Form 4-Column Grid */
+.emp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Column spans */
+.col-span-1 {
+  grid-column: span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+/* Individual Column Container */
+.emp-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Universal Typography: Identical font family & font size across ALL fields */
+.emp-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 3px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.emp-searching-badge {
+  font-size: 0.68rem;
+  color: var(--color-primary, #0d9488);
+  font-weight: 600;
+}
+
+.emp-input,
+.emp-select,
+.emp-textarea,
+.emp-select option {
+  font-family: inherit !important;
+  font-size: 0.8125rem !important;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+.emp-input,
+.emp-select {
+  width: 100%;
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.emp-select {
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.emp-input::placeholder {
+  color: #94a3b8;
+  font-size: 0.80rem;
+}
+
+.emp-input:hover,
+.emp-select:hover,
+.emp-textarea:hover {
+  border-color: var(--color-primary, #0d9488);
+}
+
+.emp-input:focus,
+.emp-select:focus,
+.emp-textarea:focus {
+  border-color: var(--color-primary, #0d9488);
+  box-shadow: 0 0 0 2px var(--color-focus, rgba(13, 148, 136, 0.2));
+}
+
+.emp-input.is-error,
+.emp-select.is-error,
+.emp-textarea.is-error {
+  border-color: #ef4444;
+  background-color: #fffbfb;
+}
+
+.emp-error-msg {
+  color: #ef4444;
+  font-size: 0.65rem;
+  line-height: 1.1;
+  margin-top: 2px;
+  font-weight: 500;
+  white-space: normal;
+}
+
+/* Textareas */
+.emp-textarea {
+  width: 100%;
+  height: 42px;
+  padding: 5px 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background-color: #ffffff;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.emp-textarea::placeholder {
+  color: #94a3b8;
+  font-size: 0.80rem;
+}
+
+/* Date Input Wrapper */
+.emp-date-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.emp-date-input-wrap .emp-input {
+  width: 100% !important;
+  padding-right: 26px !important;
+  padding-left: 8px !important;
+}
+
+.emp-date-picker-btn {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.emp-date-hidden-picker {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: none;
+  padding: 0;
+}
+
+.emp-date-icon-static {
+  position: absolute;
+  right: 7px;
+  font-size: 0.82rem;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Experience 2-column input inside 1 column */
+.emp-exp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  width: 100%;
+}
+
+.emp-exp-row .emp-input {
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Checkbox label */
+.emp-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+}
+
+.emp-checkbox-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--color-primary, #0d9488);
+  cursor: pointer;
+}
+
+/* Row Action & Confirmation: spans across 4 columns */
+.emp-actions-row {
+  grid-column: span 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border, #ccfbf1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.emp-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.emp-btn-action {
+  height: 34px;
+  padding: 0 26px;
+  background-color: var(--color-primary, #0d9488);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.25);
+}
+
+.emp-btn-action:hover:not(:disabled) {
+  background-color: var(--color-primary-hover, #0f766e);
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.35);
+  transform: translateY(-1px);
+}
+
+.emp-btn-action:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.emp-btn-reset {
+  height: 34px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  color: var(--color-text-muted, #475569);
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emp-btn-reset:hover {
+  background-color: var(--color-surface-hover, #f0fdfa);
+  color: var(--color-primary, #0d9488);
+  border-color: var(--color-primary, #0d9488);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .emp-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .col-span-1 {
+    grid-column: span 1;
+  }
+
+  .col-span-2,
+  .col-span-3,
+  .col-span-4 {
+    grid-column: span 2;
+  }
+
+  .emp-actions-row {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-form-wrapper {
+    padding: 8px 10px;
+  }
+
+  .emp-card {
+    padding: 12px 14px;
+  }
+
+  .emp-form-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .col-span-1,
+  .col-span-2,
+  .col-span-3,
+  .col-span-4 {
+    grid-column: span 1;
+  }
+
+  .emp-actions-row {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .emp-btn-group {
+    width: 100%;
+  }
+
+  .emp-btn-action,
+  .emp-btn-reset {
+    flex: 1;
+    height: 36px;
+  }
+}

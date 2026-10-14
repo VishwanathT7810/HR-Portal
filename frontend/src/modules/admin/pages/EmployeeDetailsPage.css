@@ -1,0 +1,685 @@
+/* ==========================================================================
+   Admin Employee Details Page - Exact Form Replica
+   4-Column Grid Layout matching the User Registration Form with Data
+   ========================================================================== */
+
+.emp-view-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 54px);
+  padding: 16px 24px 32px 24px;
+  background-color: var(--color-background, #f1f5f9);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.emp-view-container {
+  width: 100%;
+  max-width: 1360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card Surface */
+.emp-view-card {
+  width: 100%;
+  background-color: var(--color-surface, #ffffff);
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #cbd5e1);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  padding: 20px 24px 24px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card Top Header */
+.emp-view-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.emp-view-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.emp-view-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #64748b);
+  margin-bottom: 2px;
+}
+
+.emp-view-breadcrumbs a {
+  color: var(--color-primary, #1d4ed8);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.emp-view-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.emp-view-main-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text, #0f172a);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.emp-view-submeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #64748b);
+  margin-top: 2px;
+}
+
+.emp-view-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.emp-view-status-pill.submitted {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.emp-view-status-pill.pending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.emp-view-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.emp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--color-border, #cbd5e1);
+  background-color: #ffffff;
+  color: var(--color-text, #1e293b);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.emp-btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.emp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background-color: var(--color-primary, #1d4ed8);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.emp-btn-primary:hover {
+  background-color: var(--color-primary-hover, #1e40af);
+}
+
+/* 4-Column Grid */
+.emp-view-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emp-view-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emp-view-col.col-span-1 {
+  grid-column: span 1;
+}
+
+.emp-view-col.col-span-2 {
+  grid-column: span 2;
+}
+
+.emp-view-col.col-span-4 {
+  grid-column: span 4;
+}
+
+/* Field Label */
+.emp-view-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* Readonly Input Box with Data */
+.emp-view-field {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: text;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.emp-view-field.has-value {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.emp-view-field.is-empty {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.emp-view-field.highlight {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+/* Date Field Wrap */
+.emp-view-date-wrap,
+.emp-date-input-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.emp-date-input-wrap .emp-edit-input {
+  width: 100% !important;
+  padding-right: 32px !important;
+}
+
+.emp-date-picker-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.emp-date-picker-btn:hover {
+  color: #1e293b;
+}
+
+.emp-date-hidden-picker {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.emp-view-date-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 0.8rem;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Readonly Textarea Box with Data */
+.emp-view-textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+  line-height: 1.4;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.emp-view-textarea.has-value {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.emp-view-textarea.is-empty {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Experience Multi-box Row */
+.emp-view-exp-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.emp-view-exp-row .emp-view-field {
+  flex: 1;
+}
+
+/* Footer Card Details */
+.emp-view-footer {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #64748b);
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+  .emp-view-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emp-view-col.col-span-1 {
+    grid-column: span 1;
+  }
+
+  .emp-view-col.col-span-2 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-view-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emp-view-col.col-span-1,
+  .emp-view-col.col-span-2,
+  .emp-view-col.col-span-4 {
+    grid-column: span 1;
+  }
+
+  .emp-view-wrapper {
+    padding: 12px 12px 24px 12px;
+  }
+
+  .emp-view-card {
+    padding: 16px 14px;
+  }
+}
+
+/* Editable inputs in Edit Mode */
+.emp-edit-input,
+.emp-edit-select {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.emp-edit-select {
+  padding-right: 24px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.emp-edit-textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+  line-height: 1.4;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.emp-edit-input:focus,
+.emp-edit-select:focus,
+.emp-edit-textarea:focus {
+  border-color: var(--color-primary, #1d4ed8);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.emp-edit-input.is-error,
+.emp-edit-select.is-error,
+.emp-edit-textarea.is-error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.emp-edit-error-msg {
+  font-size: 0.7rem;
+  color: #ef4444;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   EXECUTIVE 1-PAGE A4 PRINT STYLES
+   ============================================================ */
+@media screen {
+  .emp-print-document {
+    display: none !important;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 6mm 10mm 6mm 10mm;
+}
+
+@media print {
+  /* Hide all Web UI & Admin Layout Chrome */
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 8pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset main and parent wrappers */
+  main,
+  div[style*="minHeight: 100vh"],
+  div[style*="min-height: 100vh"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    background: #ffffff !important;
+    display: block !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  .admin-sidebar-desktop,
+  .admin-top-header,
+  .admin-hamburger-btn,
+  .emp-view-wrapper,
+  header,
+  nav,
+  aside,
+  footer {
+    display: none !important;
+  }
+
+  /* Show only the executive print sheet */
+  .emp-print-document {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    line-height: 1.25 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  .print-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-bottom: 5px !important;
+    border-bottom: 2px solid #0d9488 !important;
+    margin-bottom: 5px !important;
+  }
+
+  .print-header-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .print-logo {
+    height: 38px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  .print-org-name {
+    font-size: 13pt !important;
+    font-weight: 800 !important;
+    color: #0d9488 !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .print-org-sub {
+    font-size: 7.5pt !important;
+    color: #4b5563 !important;
+    margin: 1px 0 0 !important;
+    font-weight: 500 !important;
+  }
+
+  .print-header-right {
+    text-align: right !important;
+  }
+
+  .print-ref-badge {
+    background: #f0fdfa !important;
+    border: 1px solid #0d9488 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    gap: 5px !important;
+    align-items: center !important;
+  }
+
+  .print-ref-label {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    color: #0f766e !important;
+  }
+
+  .print-ref-val {
+    font-size: 8.5pt !important;
+    font-weight: 800 !important;
+    color: #0d9488 !important;
+    font-family: monospace !important;
+  }
+
+  .print-meta-text {
+    font-size: 7.5pt !important;
+    color: #6b7280 !important;
+    margin-top: 2px !important;
+  }
+
+  .print-doc-title-bar {
+    background: #0f766e !important;
+    color: #ffffff !important;
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    padding: 4px 10px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 6px !important;
+  }
+
+  .print-status-tag {
+    font-size: 7.5pt !important;
+    background: #ffffff !important;
+    color: #0f766e !important;
+    padding: 1px 6px !important;
+    border-radius: 3px !important;
+    font-weight: 700 !important;
+  }
+
+  .print-section-title {
+    font-size: 7.8pt !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    background: #f1f5f9 !important;
+    padding: 3px 6px !important;
+    border-left: 3px solid #0d9488 !important;
+    margin-top: 5px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .print-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    margin-bottom: 3.5px !important;
+    font-size: 7.8pt !important;
+  }
+
+  .print-table td {
+    padding: 3px 5px !important;
+    border: 1px solid #d1d5db !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+
+  .print-th {
+    font-weight: 600 !important;
+    color: #4b5563 !important;
+    background-color: #f9fafb !important;
+    font-size: 7.2pt !important;
+    white-space: nowrap !important;
+  }
+
+  .print-td {
+    color: #111827 !important;
+  }
+
+  .print-declaration {
+    margin-top: 6px !important;
+    font-size: 7.2pt !important;
+    color: #4b5563 !important;
+    line-height: 1.25 !important;
+    border-top: 1px solid #e5e7eb !important;
+    padding-top: 4px !important;
+  }
+
+  .print-signature-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 24px !important;
+    padding: 0 10px !important;
+  }
+
+  .print-sign-box {
+    text-align: center !important;
+    width: 28% !important;
+  }
+
+  .print-sign-line {
+    border-top: 1px solid #374151 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .print-sign-label {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+  }
+
+  .print-sign-date {
+    font-size: 6.8pt !important;
+    color: #6b7280 !important;
+    margin-top: 2px !important;
+  }
+}
